@@ -4,7 +4,7 @@ uvicorn[standard]
 sqlalchemy[asyncio]
 asyncpg
 psycopg2-binary
-redis[asyncio]
+redis
 pydantic
 python-dotenv
 scikit-learn
