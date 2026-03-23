@@ -7,7 +7,11 @@ load_dotenv()
 
 REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
 
-redis_client = redis.from_url(REDIS_URL, decode_responses=True)
+redis_client = redis.from_url(
+    REDIS_URL,
+    decode_responses=True,
+    ssl_cert_reqs=None  # Required for Upstash TLS
+)
 
 def make_cache_key(data: dict) -> str:
     # Create a unique key from patient input
